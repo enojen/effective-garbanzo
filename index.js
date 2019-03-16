@@ -18,7 +18,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 //** app.get("/", (req, res) => {res.send({ bye:'buddy' });});
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
